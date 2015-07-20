@@ -2,11 +2,14 @@ package GTM.monop;
 
 public class Case {
 	private Case suivante;
-	private String nom = new String();
+	protected String nom = new String();
 
 	public Case(String nom) {
 		super();
 		this.nom = nom;
+	}
+
+	public Case() {
 	}
 
 	public Case getSuivante() {
@@ -25,7 +28,7 @@ public class Case {
 		this.nom = nom;
 	}
 
-	public void arreter(Joueur joueur) {
+	public void arreter(Joueur joueur) throws SoldeNegatifException {
 	}
 
 	public void passer(Joueur joueur) {

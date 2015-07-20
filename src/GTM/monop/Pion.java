@@ -29,7 +29,7 @@ public class Pion {
 		return joueur;
 	}
 
-	public void avancer(int score) {
+	public void avancer(int score) throws SoldeNegatifException {
 		for (int i = 0; i < score - 1; i++) {
 			this.position = this.position.getSuivante();
 			this.position.passer(this.joueur);

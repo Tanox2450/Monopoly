@@ -1,6 +1,7 @@
 package GTM.monop;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Joueur {
@@ -54,7 +55,7 @@ public class Joueur {
 		return solde;
 	}
 
-	public void jouer(Gobelet gobelet) {
+	public void jouer(Gobelet gobelet) throws SoldeNegatifException {
 		int score = 0;
 		int countDouble = 0;
 
@@ -77,11 +78,11 @@ public class Joueur {
 		return dernierScore;
 	}
 
-	public boolean verifierSolde(int verif) {
+	public boolean verifierSoldeSup(int verif) {
 		return (this.solde > verif);
 	}
 
-	public void avancer(int score) {
+	public void avancer(int score) throws SoldeNegatifException {
 		this.pion.avancer(score);
 	}
 
@@ -89,11 +90,21 @@ public class Joueur {
 		this.solde += somme;
 	}
 
-	public void debiter(int somme) {
+	public void debiter(int somme) throws SoldeNegatifException {
 		this.solde -= somme;
+		if (this.verifierSoldeSup(0) == false)
+			throw new SoldeNegatifException("Le solde de " + this.getNom() + " est négatif");
 	}
 
 	public void ajouterPropriete(Propriete propriete) {
 		proprietes.add(propriete);
+	}
+	
+	public void supprimerProprietes(){
+		Iterator<Propriete> iterateurProp = this.getProprietes().iterator();
+		while (iterateurProp.hasNext()) {
+			Propriete prop = (Propriete) iterateurProp.next();
+			prop.supprProprio();
+		}
 	}
 }

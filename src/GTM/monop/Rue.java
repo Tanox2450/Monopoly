@@ -5,9 +5,12 @@ package GTM.monop;
 
 public class Rue extends Propriete {
 
-//	List<Maison> maisons = new ArrayList<Maison>();
+	// List<Maison> maisons = new ArrayList<Maison>();
 
 	public Rue(String nom) {
 		super(nom);
+	}
+
+	public Rue() {
 	}
 }

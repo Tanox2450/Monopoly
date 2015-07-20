@@ -1,11 +1,16 @@
 package GTM.monop;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Plateau {
 	private Case[] cases = new Case[40];
 
 	public Plateau() {
 		super();
-		this.initialiserCases();
+		this.initialiserCases("monopoly.csv");
 		this.lierCases();
 	}
 
@@ -60,7 +65,7 @@ public class Plateau {
 				cases[i] = new Compagnie("Compagnie " + i);
 				break;
 			case 38:
-				cases[i] = new TaxeDeLuxe("Case Taxe de luxe");
+				cases[i] = new TaxeLuxe("Case Taxe de luxe");
 				break;
 			default:
 				cases[i] = new Case("Case " + i);
@@ -71,5 +76,64 @@ public class Plateau {
 
 	public Case getCaseDepart() {
 		return cases[0];
+	}
+
+	public void initialiserCases(String nomFichier) {
+		BufferedReader in = recupFichier(nomFichier);
+		String s = null;
+		String[] stringTab = null;
+		try {
+			in.readLine();
+
+			for (int i = 0; i < cases.length; i++) {
+
+				s = in.readLine();
+
+				if (s != null) {
+					stringTab = s.split(",");
+					int index = Integer.parseInt(stringTab[1]);
+					try {
+						Case c = null;
+						c = (Case) Class.forName("GTM.monop." + stringTab[2]).newInstance();
+						c.setNom(stringTab[3]);
+						if (c instanceof Propriete) {
+							((Propriete) c).setLoyer(Integer.parseInt(stringTab[6]));
+							((Propriete) c).setPrixAchat(Integer.parseInt(stringTab[5]));
+						}
+						cases[index] = c;
+					} catch (InstantiationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			in.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public BufferedReader recupFichier(String nom) {
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(nom));
+			return in;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Nom de fichier erroné");
+		}
+		return null;
 	}
 }

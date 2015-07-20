@@ -24,16 +24,27 @@ public class Monopoly {
 
 		for (countTours = 0; countTours < nbTours; countTours++) {
 			System.out.println("=== Tour " + (countTours + 1) + " ===\n");
-			Iterator iterat = joueurs.iterator();
+			Iterator<Joueur> iterat = joueurs.iterator();
 			while (iterat.hasNext()) {
 				Joueur joueur = (Joueur) iterat.next();
 
 				pion = joueur.getPion().getTypePion().toString();
 				ancienneCase = joueur.getPion().getPosition().getNom();
 
-				joueur.jouer(this.gobelet);
-//				if (joueur.verifierSolde(0) == false)
-//					iterat.remove();
+				try {
+					joueur.jouer(this.gobelet);
+				} catch (SoldeNegatifException e) {
+					// TODO Auto-generated catch block
+					System.out.println("Exception");
+
+					joueur.supprimerProprietes();
+					iterat.remove();
+//					 return;
+				}
+				// if (joueur.verifierSoldeSup(0) == false) {
+				// // iterat.remove();
+				//
+				// }
 
 				System.out.println(joueur.getNom() + " joue :");
 				System.out.println(joueur.getNom() + " fait " + joueur.getDernierScore());

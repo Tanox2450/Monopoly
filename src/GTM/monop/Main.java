@@ -23,7 +23,7 @@ public class Main {
 		jeu.ajouterJoueur(joueur3);
 		jeu.ajouterJoueur(joueur4);
 
-		nbToursString = JOptionPane.showInputDialog(null, "Nombre de tours de jeu", "10");
+		nbToursString = JOptionPane.showInputDialog(null, "Nombre de tours de jeu", "15");
 		nbTours = Integer.parseInt(nbToursString);
 
 		jeu.lancerPartie(nbTours);

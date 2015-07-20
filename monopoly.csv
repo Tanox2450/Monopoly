@@ -1,0 +1,41 @@
+pk,numero,type,nom,valeur,prix_achat,base_loyer,couleur
+1,0,Depart,Depart,200,0,0,
+2,1,Rue,Bd de Belleville,0,60,6,violet
+3,2,Communaute,Caisse de communaute,0,0,0,
+4,3,Rue,Rue Lecourbe,0,60,6,violet
+5,4,Impot,Impot sur le revenu,200,0,0,
+6,5,Gare,Gare Montparnasse,0,200,20,
+7,6,Rue,Rue de Vaugirard,0,100,10,bleu clair
+8,7,Chance,Chance,0,0,0,
+9,8,Rue,Rue de Courcelles,0,100,10,bleu clair
+10,9,Rue,Avenue de la Republique,0,120,12,bleu clair
+11,10,Visite,En prison - Simple Visite,0,0,0,
+12,11,Rue,Bd de la Villette,0,140,14,parme
+13,12,Compagnie,Compagnie d'Electricite,0,150,15,
+14,13,Rue,Avenue de Neuilly,0,140,14,parme
+15,14,Rue,Rue de Paradis,0,160,16,parme
+16,15,Gare,Gare de Lyon,0,200,20,
+17,16,Rue,Avenue Mozart,0,180,18,orange
+18,17,Communaute,Caisse de communaute,0,0,0,
+19,18,Rue,Bd Saint-Michel,0,180,18,orange
+20,19,Rue,Place Pigalle,0,200,0,orange
+21,20,Parc,Parc Gratuit,0,0,0,
+22,21,Rue,Avenue Matignon,0,220,22,rouge
+23,22,Chance,Chance,0,0,0,
+24,23,Rue,Bd Malesherbes,0,220,22,rouge
+25,24,Rue,Avenue Henri-Martin,0,240,24,rouge
+26,25,Gare,Gare du Nord,0,200,20,
+27,26,Rue,Faubourg Saint-Honore,0,260,26,jaune
+28,27,Rue,Place de la Bourse,0,260,26,jaune
+29,28,Compagnie,Compagnie de eaux,0,150,15,
+30,29,Rue,Rue Lafayette,0,280,28,jaune
+31,35,Gare,Gare Saint-Lazare,0,200,20,
+32,36,Chance,Chance,0,0,0,
+33,37,Rue,Champs-Elysees,0,350,35,bleu
+34,38,TaxeLuxe,Taxe de luxe,100,0,0,
+35,39,Rue,Rue de la Paix,0,400,40,bleu
+36,30,Prison,Allez en prison,0,0,0,
+37,31,Rue,Avenue de Breteuil,0,300,30,vert
+38,32,Rue,Avenue Foch,0,300,30,vert
+39,33,Communaute,Caisse de communaute,0,0,0,
+40,34,Rue,Bd des Capucines,0,320,32,vert

@@ -1,11 +1,15 @@
 package GTM.monop;
 
 public class Depart extends Case {
-	private final int CREDIT_PASSAGE = 200;
-	private final int CREDIT_ARRETAGE = 400;
+	private final int CREDIT_PASSAGE = -100;
+	private final int CREDIT_ARRETAGE = -100;
 
 	public Depart(String nom) {
 		super(nom);
+	}
+
+	public Depart() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
