@@ -56,6 +56,8 @@ public abstract class Propriete extends Case {
 				joueur.ajouterPropriete(this);
 				joueur.debiter(prixAchat);
 			}
+		} else if (this.proprio == null) {
+			;
 		} else if (proprio != joueur) {
 			System.out.println(joueur.getNom());
 			System.out.println(this.nom);
